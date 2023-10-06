@@ -304,10 +304,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 461225464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe9089fc7313d34481b0827afe2f52d, type: 3}
+  m_Script: {fileID: 11500000, guid: 08888580cd410774797dde8739d6ae4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWalkSpeed: 3
+  maxWalkSpeed: 5
   jumpSpeed: 10
 --- !u!1 &1883484831
 GameObject:
