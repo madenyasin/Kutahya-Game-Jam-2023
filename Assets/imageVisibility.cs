@@ -37,7 +37,7 @@ public class imageVisibility : MonoBehaviour
             else
             {
                 Debug.Log("T�m resimler g�r�n�r hale getirildi.");
-                
+                Invoke("changeScene", 5f);
             }
         }
     }
@@ -71,7 +71,7 @@ public class imageVisibility : MonoBehaviour
 
         }
         disableAllButtons();
-        Invoke("changeScene", 5f);
+        Invoke("changeScene", 3f);
         
     }
     public void path2()
