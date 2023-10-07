@@ -5,41 +5,38 @@ using UnityEngine.UI;
 
 public class imageVisibility : MonoBehaviour
 {
-    public Image image1, image2, image3, image4;
-    // Start is called before the first frame update
+    public Image[] images;
+
+    private int currentImageIndex = 1;
+
     void Start()
     {
-        image1.enabled = false;
-        image2.enabled = false;
-        image3.enabled = false;
-        image4.enabled = false;
+        DisableAllImages();
+        images[0].enabled = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // Burada istediðiniz iþlemi gerçekleþtirebilirsiniz.
-            Debug.Log("Space tuþuna basýldý!");
 
+            if (currentImageIndex < images.Length)
+            {
+                images[currentImageIndex].enabled = true;
+                currentImageIndex++;
+            }
+            else
+            {
+                Debug.Log("Tüm resimler görünür hale getirildi.");
+            }
+        }
+    }
 
-            if (image1.enabled == false)
-            {
-                image1.enabled=true;
-            }
-            else if (image2.enabled == false)
-            {
-                image2.enabled = true;
-            }
-            else if (image3.enabled == false)
-            {
-                image3.enabled = true;
-            }
-            else if (image4.enabled == false)
-            {
-                image4.enabled = true;
-            }
+    void DisableAllImages()
+    {
+        foreach (Image image in images)
+        {
+            image.enabled = false;
         }
     }
 }
