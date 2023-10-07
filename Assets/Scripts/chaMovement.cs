@@ -11,32 +11,35 @@ public class chaMovement : MonoBehaviour
     Vector3 playerVelocity;
     Rigidbody2D rb;
     Animator animator;
-    
 
-void Start() {
-    playerVelocity = Vector3.zero;
-    rb = this.GetComponent<Rigidbody2D>();
-    animator = GetComponent<Animator>();
-    
-}
+    private Vector3 respawnpoint;
+    public GameObject FallDetector;
+
+    void Start() {
+        playerVelocity = Vector3.zero;
+        rb = this.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        respawnpoint = transform.position;
+
+    }
 
 
 
-void Update()
-{
-    
-    if(inputEnabled==true){
-        if (Input.GetAxis("Horizontal") > 0)
+    void Update()
+    {
+
+        if (inputEnabled == true) {
+            if (Input.GetAxis("Horizontal") > 0)
             {
                 playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
                 animator.Play("WalkingRight");
-                
+
             }
             else if (Input.GetAxis("Horizontal") < 0)
             {
                 playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
                 animator.Play("WalkingLeft");
-                
+
             }
             else
             {
@@ -50,10 +53,10 @@ void Update()
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerVelocity.y = jumpSpeed;
-                if(playerVelocity.x>0)animator.Play("Jumping");
-                else if(playerVelocity.x<0)animator.Play("jumpingLeft");
+                if (playerVelocity.x > 0) animator.Play("Jumping");
+                else if (playerVelocity.x < 0) animator.Play("jumpingLeft");
                 isJumping = true;
-                inputEnabled=false; // jumping animasyonunun oynadığını işaretle
+                inputEnabled = false; // jumping animasyonunun oynadığını işaretle
             }
             else
             {
@@ -61,19 +64,30 @@ void Update()
             }
 
             rb.velocity = playerVelocity;
-            }
-    
-}
+        }
 
-// Jumping animasyonunun bitişinde çağrılacak olan bir fonksiyon
-
-public void OnJumpAnimationEnd()
-{
-    isJumping = false;
-    inputEnabled = true;
-    
-}
+        FallDetector.transform.position = new Vector2(transform.position.x, FallDetector.transform.position.y);
 
 
 
+    }
+
+    private void OnJumpAnimationEnd()
+    {
+        isJumping = false;
+        inputEnabled = true;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FallDetector")
+        {
+            transform.position = respawnpoint;
+        }
+        else if (collision.tag == "Checkpoint")
+        {
+            respawnpoint = transform.position;
+        }
+    }
 }
