@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; // Add this using directive
+using System;
 
 public class trigger : MonoBehaviour
 {
     public List<Button> buttons; // List of buttons to add hover detection to
-
+    public Image image, image2, image3;
+    
     private void Start()
     {
         foreach (Button button in buttons)
@@ -15,6 +17,9 @@ public class trigger : MonoBehaviour
             // Add hover detection to each button in the list
             AddHoverDetectionToButton(button);
         }
+        image.enabled = false;
+        image2.enabled = false;
+        image3.enabled = false;
     }
 
     private void AddHoverDetectionToButton(Button button)
@@ -42,5 +47,25 @@ public class trigger : MonoBehaviour
     {
         // Print the button's name to the console
         Debug.Log("Button Hovered: " + button.gameObject.name);
+        string name = button.gameObject.name;
+        if (name == "Play")
+        {
+            image.enabled = true;
+            image2.enabled = false;
+            image3.enabled = false;
+        }
+        else if (name == "Quit")
+        {
+            image.enabled = false;
+            image2.enabled = true;
+            image3.enabled = false;
+
+        }
+        else
+        {
+            image.enabled = false;
+            image2.enabled = false;
+            image3.enabled = true;
+        }
     }
 }
