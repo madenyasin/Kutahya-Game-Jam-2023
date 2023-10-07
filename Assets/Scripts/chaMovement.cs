@@ -24,6 +24,7 @@ void Start() {
 
 void Update()
 {
+    
     if(inputEnabled==true){
         if (Input.GetAxis("Horizontal") > 0)
             {
@@ -71,5 +72,7 @@ public void OnJumpAnimationEnd()
     inputEnabled = true;
     
 }
+
+
 
 }
