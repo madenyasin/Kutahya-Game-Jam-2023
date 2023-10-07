@@ -43359,7 +43359,7 @@ GameObject:
   - component: {fileID: 758638535}
   - component: {fileID: 758638534}
   - component: {fileID: 758638533}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
