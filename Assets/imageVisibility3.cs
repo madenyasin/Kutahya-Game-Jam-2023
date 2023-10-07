@@ -70,7 +70,7 @@ public class imageVisibility3 : MonoBehaviour
         
         disableAllButtons();
         DisableAllImages();
-        Invoke("changeScene", 3f);
+        Invoke("changeScene", 1f);
 
     }
     public void path2()
@@ -94,7 +94,7 @@ public class imageVisibility3 : MonoBehaviour
         
         disableAllButtons();
         DisableAllImages();
-        Invoke("changeScene", 5f);
+        Invoke("changeScene", 1f);
 
     }
 
