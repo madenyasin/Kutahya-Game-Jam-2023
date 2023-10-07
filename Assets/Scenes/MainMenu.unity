@@ -569,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68065b0ce79db804388d91c03ff89e60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a149138416442bc4db4e82832186aa3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68065b0ce79db804388d91c03ff89e60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a149138416442bc4db4e82832186aa3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   image2: {fileID: 659055604}
   image3: {fileID: 1828629660}
   audioSource: {fileID: 1112670064}
-  audioClip: {fileID: 8300000, guid: 5279c9fe759f4a048a85dc5b2c39db29, type: 3}
+  audioClip: {fileID: 8300000, guid: 1a45cbd5256a61e48977d6b950ee065b, type: 3}
 --- !u!114 &1458731533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68065b0ce79db804388d91c03ff89e60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a149138416442bc4db4e82832186aa3b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

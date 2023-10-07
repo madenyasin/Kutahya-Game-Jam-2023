@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.WSA;
 
 public class imageVisibility : MonoBehaviour
 {
@@ -36,7 +36,8 @@ public class imageVisibility : MonoBehaviour
             }
             else
             {
-                Debug.Log("Tüm resimler görünür hale getirildi.");
+                Debug.Log("Tï¿½m resimler gï¿½rï¿½nï¿½r hale getirildi.");
+                
             }
         }
     }
@@ -70,6 +71,7 @@ public class imageVisibility : MonoBehaviour
 
         }
         disableAllButtons();
+        Invoke("changeScene", 5f);
         
     }
     public void path2()
@@ -85,6 +87,7 @@ public class imageVisibility : MonoBehaviour
 
         }
         disableAllButtons();
+        Invoke("changeScene", 5f);
     }
     public void path3()
     {
@@ -99,6 +102,12 @@ public class imageVisibility : MonoBehaviour
 
         }
         disableAllButtons();
+        Invoke("changeScene", 5f);
+
+    }
+
+    private void changeScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
 }
