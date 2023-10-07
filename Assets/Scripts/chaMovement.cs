@@ -50,7 +50,8 @@ void Update()
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 playerVelocity.y = jumpSpeed;
-                animator.Play("Jumping");
+                if(playerVelocity.x>0)animator.Play("Jumping");
+                else if(playerVelocity.x<0)animator.Play("jumpingLeft");
                 isJumping = true;
                 inputEnabled=false; // jumping animasyonunun oynadığını işaretle
             }
