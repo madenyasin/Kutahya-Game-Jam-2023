@@ -9,7 +9,9 @@ public class trigger : MonoBehaviour
 {
     public List<Button> buttons; // List of buttons to add hover detection to
     public Image image, image2, image3;
-    
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
     private void Start()
     {
         foreach (Button button in buttons)
@@ -53,19 +55,26 @@ public class trigger : MonoBehaviour
             image.enabled = true;
             image2.enabled = false;
             image3.enabled = false;
+            playSound();
         }
         else if (name == "Quit")
         {
             image.enabled = false;
             image2.enabled = true;
             image3.enabled = false;
-
+            playSound();
         }
         else
         {
             image.enabled = false;
             image2.enabled = false;
             image3.enabled = true;
+            playSound();
         }
+    }
+    private void playSound() 
+    {
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 }
