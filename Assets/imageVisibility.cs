@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.WSA;
 
 public class imageVisibility : MonoBehaviour
 {
     public Image[] images;
+    public Button[] buttons;
 
     private int currentImageIndex = 1;
 
     void Start()
     {
+        disableAllButtons();
         DisableAllImages();
         images[0].enabled = true;
     }
@@ -19,7 +23,12 @@ public class imageVisibility : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            if(currentImageIndex == 3) {
+                foreach (Button button in buttons)
+                {
+                    button.gameObject.SetActive(true);
+                }
+            }
             if (currentImageIndex < images.Length)
             {
                 images[currentImageIndex].enabled = true;
@@ -32,11 +41,64 @@ public class imageVisibility : MonoBehaviour
         }
     }
 
-    void DisableAllImages()
+    public void DisableAllImages()
     {
         foreach (Image image in images)
         {
             image.enabled = false;
         }
     }
+    public void disableAllButtons()
+    {
+        foreach (Button button in buttons)
+        {
+            button.gameObject.SetActive(false);
+        }
+    }
+
+
+    public void path1()
+    {
+        for (int i = 0; i < images.Length; i++) 
+        {
+            if (i == 4)
+            {
+                images[i].enabled = true;
+                continue;
+            }
+            images[i].enabled = false;
+
+        }
+        disableAllButtons();
+        
+    }
+    public void path2()
+    {
+        for (int i = 0; i < images.Length; i++)
+        {
+            if (i == 5)
+            {
+                images[i].enabled = true;
+                continue;
+            }
+            images[i].enabled = false;
+
+        }
+        disableAllButtons();
+    }
+    public void path3()
+    {
+        for (int i = 0; i < images.Length; i++)
+        {
+            if (i == 6)
+            {
+                images[i].enabled = true;
+                continue;
+            }
+            images[i].enabled = false;
+
+        }
+        disableAllButtons();
+    }
+
 }
