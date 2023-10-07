@@ -84,16 +84,19 @@ AnimatorStateMachine:
     m_Position: {x: 290, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8435751784756049035}
-    m_Position: {x: 429.9154, y: 330.51474, z: 0}
+    m_Position: {x: 70, y: 310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7099833484791914442}
-    m_Position: {x: 719.1839, y: 230.89908, z: 0}
+    m_Position: {x: 840, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 486859369311192304}
     m_Position: {x: 550, y: 170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5448954809210942742}
-    m_Position: {x: 585, y: 235, z: 0}
+    m_Position: {x: 290, y: 250, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -1942546161307786753}
+    m_Position: {x: 840, y: 290, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -151,6 +154,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 796fbe4944d154b4f9acde13ce25ae10, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-1942546161307786753
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: walkWithTorchLeft
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 512b9642460f1d84caf2a8f9686cd23e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
