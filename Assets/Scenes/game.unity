@@ -13702,7 +13702,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2a65dbc97aa48ff4b9b23f6d7d237776, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -13723,7 +13723,7 @@ Transform:
   m_GameObject: {fileID: 461225464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.24, y: -26.57, z: 9.355056}
+  m_LocalPosition: {x: -28.43, y: 10.22, z: 9.355056}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13806,6 +13806,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWalkSpeed: 5
   jumpSpeed: 10
+  camera: {fileID: 1883484833}
+  targetTransform: {fileID: 1406455321}
+  smoothSpeed: 0.5
 --- !u!1 &522825937
 GameObject:
   m_ObjectHideFlags: 0
@@ -43482,6 +43485,7 @@ Transform:
   - {fileID: 461225467}
   - {fileID: 440936812}
   - {fileID: 758638535}
+  - {fileID: 1406455321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039597769
@@ -45719,6 +45723,37 @@ MonoBehaviour:
   - {fileID: 1613085526}
   - {fileID: 2636439}
   - {fileID: 200442343}
+--- !u!1 &1406455320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406455321}
+  m_Layer: 0
+  m_Name: piramitelr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1406455321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406455320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 54.87, y: 13.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 982976109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613085525
 GameObject:
   m_ObjectHideFlags: 0
@@ -45907,10 +45942,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 1003.62
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -45935,7 +45970,7 @@ Transform:
   m_GameObject: {fileID: 1883484831}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.30444103, y: 0.56, z: -10}
+  m_LocalPosition: {x: 0, y: 1.7199998, z: -10}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
