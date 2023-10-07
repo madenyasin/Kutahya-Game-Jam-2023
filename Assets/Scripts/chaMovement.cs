@@ -24,11 +24,19 @@ void Start() {
 
 void Update()
 {
+    
     if(inputEnabled==true){
-        if (Input.GetAxis("Horizontal") != 0)
+        if (Input.GetAxis("Horizontal") > 0)
             {
                 playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
                 animator.Play("WalkingRight");
+                
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
+                animator.Play("WalkingLeft");
+                
             }
             else
             {
@@ -64,5 +72,7 @@ public void OnJumpAnimationEnd()
     inputEnabled = true;
     
 }
+
+
 
 }
