@@ -14,7 +14,7 @@ public class puzzleController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (emptyIndex - 3 >= 0)
             {
@@ -22,7 +22,7 @@ public class puzzleController : MonoBehaviour
                 emptyIndex -= 3;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (emptyIndex + 3 < puzzlePieces.Length)
             {
@@ -30,7 +30,7 @@ public class puzzleController : MonoBehaviour
                 emptyIndex += 3;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (emptyIndex % 3 != 0)
             {
@@ -38,7 +38,7 @@ public class puzzleController : MonoBehaviour
                 emptyIndex -= 1;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if ((emptyIndex + 1) % 3 != 0)
             {

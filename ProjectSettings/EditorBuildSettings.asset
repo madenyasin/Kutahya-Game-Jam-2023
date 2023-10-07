@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Hikaye-Giris.unity
     guid: ec65d97f95db5bf48ae054f67edaf9e8
   - enabled: 1
+    path: Assets/Scenes/game.unity
+    guid: fc4e8536a49b9d346840d237cf6b21f0
+  - enabled: 1
     path: Assets/Scenes/Hikaye-2.unity
     guid: fe2693281ff1fa14a919413fe7e185d5
   - enabled: 1
@@ -20,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hikaye-4.unity
     guid: 2547424dfdc33e04e981083bbde3d8d6
-  - enabled: 1
-    path: Assets/Scenes/game.unity
-    guid: fc4e8536a49b9d346840d237cf6b21f0
   m_configObjects: {}
