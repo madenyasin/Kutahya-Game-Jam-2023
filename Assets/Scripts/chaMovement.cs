@@ -21,7 +21,8 @@ public class chaMovement : MonoBehaviour
 
     private Vector3 respawnpoint;
     public GameObject FallDetector;
-
+    private bool puzzleSolved=false;
+    public puzzleController pc;
     public GameObject deathScreen;
     public Transform bolum2baslangic;
 
@@ -38,8 +39,8 @@ public class chaMovement : MonoBehaviour
     void Update()
     {
     
-       
-       if(transform.position.x>146&&transform.position.x<150&&transform.position.y>-42f){
+       puzzleSolved=pc.CheckCorrectOrder();
+       if(puzzleSolved&&transform.position.x>146&&transform.position.x<150&&transform.position.y>-42f){
             SceneManager.LoadScene("Hikaye-4");
        } 
         if(transform.position.x>155&&transform.position.x<160&&transform.position.y<-42f){

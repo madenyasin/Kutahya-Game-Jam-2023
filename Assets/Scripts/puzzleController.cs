@@ -64,18 +64,18 @@ public class puzzleController : MonoBehaviour
         puzzlePieces[index2] = tempPiece;
     }
 
-    private void CheckCorrectOrder()
+    public bool CheckCorrectOrder()
     {
         for (int i = 0; i < puzzlePieces.Length; i++)
         {
             if (puzzlePieces[i].transform.position != targetPositions[i].position)
             {
                 // The puzzle is not in the correct order
-                return;
+                return false;
             }
         }
-
+       return true;
         // Puzzle is in the correct order
-        door.SetActive(true);
+        
     }
 }
