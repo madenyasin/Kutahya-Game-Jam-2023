@@ -5,6 +5,7 @@ public class puzzleController : MonoBehaviour
     public GameObject[] puzzlePieces;
     public Transform[] targetPositions;
     private int emptyIndex;
+    public GameObject door;
 
     private void Start()
     {
@@ -75,6 +76,6 @@ public class puzzleController : MonoBehaviour
         }
 
         // Puzzle is in the correct order
-        Debug.Log("Puzzle solved!");
+        door.SetActive(true);
     }
 }

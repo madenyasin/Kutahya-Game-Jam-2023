@@ -108,7 +108,9 @@ public class imageVisibility : MonoBehaviour
 
     private void changeScene(){
         if(SceneManager.GetActiveScene().name=="Hikaye-Piramit"){
-            SceneManager.LoadScene("game");
+            SceneManager.LoadScene("game");}
+        if(SceneManager.GetActiveScene().name=="Hikaye-2"){
+            SceneManager.LoadScene("bolum2");
 
         }else
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);

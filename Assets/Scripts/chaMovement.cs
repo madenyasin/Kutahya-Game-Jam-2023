@@ -23,6 +23,7 @@ public class chaMovement : MonoBehaviour
     public GameObject FallDetector;
 
     public GameObject deathScreen;
+    public Transform bolum2baslangic;
 
 
     void Start()
@@ -36,9 +37,17 @@ public class chaMovement : MonoBehaviour
     
     void Update()
     {
+    
+       
+       if(transform.position.x>146&&transform.position.x<150&&transform.position.y>-42f){
+            SceneManager.LoadScene("Hikaye-4");
+       } 
+        if(transform.position.x>155&&transform.position.x<160&&transform.position.y<-42f){
+            SceneManager.LoadScene("Hikaye-2");
+        } 
         if (inputEnabled == true)
         {
-            Debug.Log(playerVelocity.x );
+            
             if (Input.GetAxis("Horizontal") > 0)
             {
                 playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
@@ -72,11 +81,13 @@ public class chaMovement : MonoBehaviour
 
             rb.velocity = playerVelocity;
         }
-        if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>91.25f&&transform.position.x<93.25f){
-            Debug.Log("Giriş Başarılı");
-        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>85f&&transform.position.x<87.5f){
+        Debug.Log("transform.position.x= "+transform.position.x);
+        if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>92.3f&&transform.position.x<94.8f){
+            transform.position = bolum2baslangic.position;
+            
+        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>86f&&transform.position.x<89f){
             geber();
-        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>96f&&transform.position.x<98f){
+        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>96.8f&&transform.position.x<99.2f){
             geber();
         }
 
