@@ -25,7 +25,8 @@ public class chaMovement : MonoBehaviour
     public puzzleController pc;
     public GameObject deathScreen;
     public Transform bolum2baslangic;
-
+    public GameObject water;
+    public 
 
     void Start()
     {
@@ -82,7 +83,7 @@ public class chaMovement : MonoBehaviour
 
             rb.velocity = playerVelocity;
         }
-        Debug.Log("transform.position.x= "+transform.position.x);
+        //Debug.Log("transform.position.x= "+transform.position.x);
         if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>92.3f&&transform.position.x<94.8f){
             transform.position = bolum2baslangic.position;
             
@@ -102,6 +103,13 @@ public class chaMovement : MonoBehaviour
         
         Invoke("HikayePiramit",3f);
         }
+        if(transform.position.y - water.transform.position.y < 5)
+        {
+            geber();
+            
+        }
+        Debug.Log(transform.position.y - water.transform.position.y);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
 {
