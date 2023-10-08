@@ -50,7 +50,7 @@ public class chaMovement : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 playerVelocity.y = jumpSpeed;
                 if (playerVelocity.x > 0) animator.Play("Jumping");
