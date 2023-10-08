@@ -17,12 +17,16 @@ public class chaMovement : MonoBehaviour
     private Vector3 offset;
     private bool isCameraMoving = false;
     private Vector3 initialCameraPosition;
+
+    private Vector3 respawnpoint;
+    public GameObject FallDetector;
+
     void Start()
     {
         playerVelocity = Vector3.zero;
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+        respawnpoint = transform.position;
     }
 
     
@@ -64,11 +68,25 @@ public class chaMovement : MonoBehaviour
 
             rb.velocity = playerVelocity;
         }
+
+        FallDetector.transform.position = new Vector2(transform.position.x, FallDetector.transform.position.y);
+
         if(transform.position.x>30){
             inputEnabled = false;
              offset = camera.transform.position - targetTransform.position;
         initialCameraPosition = camera.transform.position;
         StartCoroutine(MoveCameraToTarget());
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "FallDetector")
+        {
+            transform.position = respawnpoint;
+        }
+        else if (collision.tag == "Checkpoint")
+        {
+            respawnpoint = transform.position;
         }
     }
 
