@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class chaMovement : MonoBehaviour
 {
     private bool inputEnabled = true;
-    private bool isJumping = false;
+    private bool isGrounded = true;
     public float maxWalkSpeed;
     public float jumpSpeed;
     Vector3 playerVelocity;
@@ -21,6 +22,9 @@ public class chaMovement : MonoBehaviour
     private Vector3 respawnpoint;
     public GameObject FallDetector;
 
+    public GameObject deathScreen;
+
+
     void Start()
     {
         playerVelocity = Vector3.zero;
@@ -34,6 +38,7 @@ public class chaMovement : MonoBehaviour
     {
         if (inputEnabled == true)
         {
+            Debug.Log(playerVelocity.x );
             if (Input.GetAxis("Horizontal") > 0)
             {
                 playerVelocity.x = Input.GetAxis("Horizontal") * maxWalkSpeed;
@@ -47,10 +52,9 @@ public class chaMovement : MonoBehaviour
             else
             {
                 playerVelocity.x = 0;
-                if (!isJumping)
-                {
-                    animator.Play("Idle");
-                }
+                
+                animator.Play("Idle");
+                
             }
 
             if (Input.GetKeyDown(KeyCode.W))
@@ -58,8 +62,8 @@ public class chaMovement : MonoBehaviour
                 playerVelocity.y = jumpSpeed;
                 if (playerVelocity.x > 0) animator.Play("Jumping");
                 else if (playerVelocity.x < 0) animator.Play("jumpingLeft");
-                isJumping = true;
-                inputEnabled = false;
+                
+                //inputEnabled = false;
             }
             else
             {
@@ -68,33 +72,49 @@ public class chaMovement : MonoBehaviour
 
             rb.velocity = playerVelocity;
         }
+        if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>91.25f&&transform.position.x<93.25f){
+            Debug.Log("Giriş Başarılı");
+        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>85f&&transform.position.x<87.5f){
+            geber();
+        }else if(Input.GetKeyDown(KeyCode.E)&&transform.position.x>96f&&transform.position.x<98f){
+            geber();
+        }
 
         FallDetector.transform.position = new Vector2(transform.position.x, FallDetector.transform.position.y);
 
-        if(transform.position.x>30){
+        if(transform.position.x>30&&transform.position.x<35){
             inputEnabled = false;
              offset = camera.transform.position - targetTransform.position;
         initialCameraPosition = camera.transform.position;
         StartCoroutine(MoveCameraToTarget());
+        
+        Invoke("HikayePiramit",3f);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "FallDetector")
-        {
-            transform.position = respawnpoint;
-        }
-        else if (collision.tag == "Checkpoint")
-        {
-            respawnpoint = transform.position;
-        }
-    }
+{
 
-    public void OnJumpAnimationEnd()
+    if (collision.tag == "FallDetector")
     {
-        isJumping = false;
-        inputEnabled = true;
+        deathScreen.SetActive(true);
+        Invoke("yenidendog", 5f);
+
     }
+    else if (collision.tag == "Checkpoint")
+    {
+        respawnpoint = transform.position;
+
+    }
+}
+
+public void yenidendog()
+ {
+
+     transform.position = respawnpoint;
+     deathScreen.SetActive(false);
+
+ }
+   
     IEnumerator MoveCameraToTarget()
     {
         isCameraMoving = true;
@@ -113,6 +133,14 @@ public class chaMovement : MonoBehaviour
         isCameraMoving = false;
         inputEnabled = true;
         camera.transform.SetParent(this.gameObject.transform);
+        
     }
-
+    void HikayePiramit(){
+        SceneManager.LoadScene("Hikaye-Piramit");
+    }
+    
+    void geber(){
+        deathScreen.SetActive(true);
+        Invoke("yenidendog", 5f);
+    }
 }

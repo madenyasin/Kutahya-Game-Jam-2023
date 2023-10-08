@@ -107,7 +107,12 @@ public class imageVisibility : MonoBehaviour
     }
 
     private void changeScene(){
+        if(SceneManager.GetActiveScene().name=="Hikaye-Piramit"){
+            SceneManager.LoadScene("game");
+
+        }else
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+
     }
 
 }

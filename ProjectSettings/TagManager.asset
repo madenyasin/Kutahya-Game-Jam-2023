@@ -7,6 +7,9 @@ TagManager:
   - tuzak
   - FallDetector
   - Checkpoint
+  - truePyra
+  - Olum
+  - OlumEkrani
   layers:
   - Default
   - TransparentFX
